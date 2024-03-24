@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/', [SiteController::class, 'index'])->name('site.index');
 
-    $products = Product::paginate(6);
-    return view('home', compact('products'));
-});
+Route::get('product/{slug}', [SiteController::class, 'details'])->name('site.details');
