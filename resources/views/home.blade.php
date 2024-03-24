@@ -20,6 +20,10 @@
     @endforeach
 </div>
 
+<div class="row">
+    {{ $products->links() }}
+</div>
+
 @endsection
 
             
